@@ -1,0 +1,7 @@
+@import './base.css';
+
+a{
+  color: var(--vt-c-white-light);
+  text-decoration: none;
+}
+
