@@ -1,4 +1,11 @@
-<script setup>
+<script>
+import Caroussel from '../components/Caroussel.vue';
+
+export default {
+  components: {
+    Caroussel,
+  },
+};
 
 </script>
 
@@ -73,25 +80,8 @@
       </div>
     </div>
     <!-------------------------------- Caroussel ---------------------------->
-    <div class="caroussel">
-      <div class="caroussel-projects">
-        <img class="img-caroussel" src="../assets/images/kermony-screen.png" alt="">
-        <h4>Kermony Office</h4>
-        <RouterLink to="/projets">En savoir plus >></RouterLink>
-      </div>
-      
-  <!--    
-    <div class="caroussel-projects">
-        <img class="img-caroussel" src="../assets/images/seasons-screen.png" alt="">
-        <h4>Seasons</h4>
-        <RouterLink to="/projets">En savoir plus >></RouterLink>
-      </div>
-      <div class="caroussel-projects">
-        <img class="img-caroussel" src="../assets/images/sentimental-screen.png" alt="">
-        <h4>Reconnaissance Sentimentale des Commentaires</h4>
-        <RouterLink to="/projets">En savoir plus >></RouterLink>
-      </div>-->
-    </div>
+    <Caroussel />
+    
   </main>
 </template>
 
