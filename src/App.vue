@@ -1,17 +1,23 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
+import { RouterLink, RouterView } from 'vue-router';
+import { defineEmits } from 'vue'; // <- Ceci doit venir de 'vue'
 
+const emit = defineEmits(['scroll-to']);
+
+const scrollTo = (section, event) => {
+  event.preventDefault();
+  emit('scroll-to', section);
+};
+</script>
 <template>
   <header>
-      <nav>
-        <RouterLink to="/experience">Expériences</RouterLink>
-        <RouterLink to="/projets">Projets</RouterLink>
-        <RouterLink to="/contact">Contact</RouterLink>
-      </nav>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/experience">Expériences</RouterLink>
+      <RouterLink to="/contact">Contact</RouterLink>
+    </nav>
   </header>
-
-  <RouterView />
+  <RouterView @scroll-to="handleScrollTo" />
   <footer>
     <div>
       <h4>Contact</h4>
@@ -19,13 +25,12 @@ import { RouterLink, RouterView } from 'vue-router'
       <p>06 99 51 05 91</p>
     </div>
     <h3>N'hésitez pas à me contacter</h3>
-    <div>
-      <a href="" target="_blank"><img src="" alt="github"></a>
-      <a href="https://www.linkedin.com/in/noah-sfez-3b3b3b1b3/" target="_blank"><img src="../assets/images/linkedin.png" alt="linkedin"></a>
+    <div class="icones">
+      <a href="https://github.com/Noah-Sfez" target="_blank"><img src="./assets/images/github.png" alt="github"></a>
+      <a href="https://www.linkedin.com/in/noahsfez/" target="_blank"><img src="./assets/images/linkedin.png" alt="linkedin"></a>
     </div>
   </footer>
 </template>
-
 <style scoped>
 nav{
   display: flex;
@@ -34,16 +39,19 @@ nav{
   background-color: rgba(22, 22, 23, 0.8);
   width: 100%;
   gap: 1%;
+  position: sticky;
+  position: -webkit-sticky; /* Pour le support Safari */
+  top: 0;
+  z-index: 1000;
 }
 a {
   margin-right: 10%;
 }
-
-
 footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
+  justify-items: center;
   align-items: center;
   background-color: rgb(245, 245, 247);
   padding: 1rem;
@@ -54,5 +62,35 @@ footer {
   color: black;
   text-decoration: none;
 }
+
+.icones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.icones img {
+  width: 3rem;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    justify-content: center;
+    gap: 40px;
+  }
+  a {
+    margin-right: 0;
+  }
+  footer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .icones {
+    justify-content: center;
+  }
+}
+  
+
+
 </style>
 
