@@ -1,11 +1,10 @@
 <template>
   <Carousel
-    :items-to-show="itemsToShow"
+    :items-to-show="1"
     :items-to-scroll="1"
     :wrap-around="true"
     :autoplay="3000"
     :pauseAutoplayOnHover="true"
-    :perPageCustom="[[768, 1]]" :scrollPerPage="true"
   >
     <Slide v-for="(slide, index) in slides" :key="index">
       <div class="carousel__item">
@@ -16,6 +15,7 @@
     </Slide>
     <template #addons>
       <Navigation />
+      <Pagination />
     </template>
   </Carousel>
   <div v-if="isPopupVisible" class="overlay" @click="closePopup">
@@ -61,19 +61,20 @@
 </template>
 <script>
 import { defineComponent, ref, onMounted, onUnmounted, computed } from 'vue';
-import { Carousel, Navigation, Slide } from 'vue3-carousel';
+import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
 export default defineComponent({
-  name: 'WrapAround',
+  name: 'AdvancedCarousel',
   components: {
     Carousel,
     Slide,
+    Pagination,
     Navigation,
   },
   setup() {
     const windowWidth = ref(window.innerWidth);
     const itemsToShow = computed(() => {
-      return windowWidth.value < 768 ? 1 : 2.5; // Affiche 1 élément pour les écrans < 768px, sinon 2.5
+      return windowWidth.value < 768 ? 1 : 2.5;
     });
     const handleResize = () => {
       windowWidth.value = window.innerWidth;
@@ -220,6 +221,7 @@ export default defineComponent({
   }
 });
 </script>
+
 <style scoped>
 /* Button Github */
 .button {
@@ -358,47 +360,47 @@ button:hover .button-text {
 .technologies {
   display: flex;
   justify-content: center;
-  margin-top: 20px; /* Espace au-dessus de la liste des icônes */
+  margin-top: 20px; 
 }
 .tech-icon {
-  width: 30px; /* Ou la taille que tu préfères */
-  height: 30px; /* Ou la taille que tu préfères */
-  margin: 0 5px; /* Espace entre les icônes */
+  width: 30px; 
+  height: 30px; 
+  margin: 0 5px; 
 }
 .html {
   padding: 10px;
-  width: 60px; /* Ou la taille que tu préfères */
-  height: 60px; /* Ou la taille que tu préfères */
-  margin: 0 10px; /* Espace entre les icônes */
+  width: 60px; 
+  height: 60px; 
+  margin: 0 10px; 
 }
 .css {
   padding: 10px;
-  width: 60px; /* Ou la taille que tu préfères */
-  height: 60px; /* Ou la taille que tu préfères */
-  margin: 0 10px; /* Espace entre les icônes */
+  width: 60px; 
+  height: 60px; 
+  margin: 0 10px; 
 }
 .javascript {
   padding: 10px;
-  width: 60px; /* Ou la taille que tu préfères */
-  height: 60px; /* Ou la taille que tu préfères */
-  margin: 0 10px; /* Espace entre les icônes */
+  width: 60px; 
+  height: 60px; 
+  margin: 0 10px; 
 }
 .php {
   padding: 10px;
-  width: 60px; /* Ou la taille que tu préfères */
-  height: 60px; /* Ou la taille que tu préfères */
-  margin: 0 10px; /* Espace entre les icônes */
+  width: 60px; 
+  height: 60px; 
+  margin: 0 10px; 
 }
 .mysql {
   padding: 10px;
-  width: 60px; /* Ou la taille que tu préfères */
-  height: 60px; /* Ou la taille que tu préfères */
-  margin: 0 10px; /* Espace entre les icônes */
+  width: 60px; 
+  height: 60px; 
+  margin: 0 10px; 
 }
 .pop-img {
   width: 50%;
   height: auto;
-  display: block; /* Cela supprime l'espace blanc sous l'image */
+  display: block; 
   object-fit: cover;
   max-width: none;
 }
@@ -407,25 +409,25 @@ button:hover .button-text {
   height: 100%;
 }
 .overlay {
-  position: fixed; /* ou absolute */
-  display: none; /* Ajouté pour commencer avec la pop-up cachée */
+  position: fixed; 
+  display: none; 
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* couleur semi-transparente pour le fond */
+  background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 50; /* Assure-toi que cela est au-dessus de tout le contenu de la page */
+  z-index: 50; 
 }
-/* Classe pour gérer l'état 'ouvert' de la pop-up */
+
 .overlay.open {
-  display: flex; /* ou 'block', selon ce qui convient à ton layout */
-  animation: fadeIn 0.5s forwards; /* Utilise l'animation fadeIn quand la pop-up s'ouvre */
+  display: flex; 
+  animation: fadeIn 0.5s forwards; 
 }
 .overlay.close {
-  animation: fadeOut 0.5s forwards; /* Utilise l'animation fadeOut quand la pop-up se ferme */
+  animation: fadeOut 0.5s forwards; 
 }
 .popup {
   position: fixed;
@@ -455,30 +457,30 @@ button:hover .button-text {
 .mascotte-img {
   width: 75% !important;
   height: 90% !important;
-  display: block; /* Cela supprime l'espace blanc sous l'image */
+  display: block; 
   object-fit: cover;
   max-width: none;
 }
 .carousel__item img {
   width: 100%;
   height: auto;
-  display: block; /* Cela supprime l'espace blanc sous l'image */
+  display: block; 
   object-fit: cover;
   max-width: none;
 }
 .carousel__item p {
   transition: transform 0.3s ease;
-  transform: translateY(0px); /* Ce texte se lèvera un peu au hover */
+  transform: translateY(0px);
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   margin: 0;
-  padding: 10px 20px; /* Espace interne pour le texte */
-  color: white; /* Couleur du texte */
-  font-size: 1.2em; /* Taille du texte */
-  z-index: 10; /* S'assurer que le texte est au-dessus de l'image */
-  text-align: center; /* Centrer le texte */
+  padding: 10px 20px; 
+  color: white; 
+  font-size: 1.2em; 
+  z-index: 10; 
+  text-align: center; 
 }
 .carousel__item::after {
   content: '';
@@ -486,9 +488,9 @@ button:hover .button-text {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 50%; /* Ajuste ceci pour contrôler la hauteur du filtre */
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); /* Gradient du noir à transparent */
-}
+  height: 50%; 
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); 
+}/*
 .carousel {
   width: 100%;
   height: auto;
@@ -497,7 +499,8 @@ button:hover .button-text {
   justify-content: center;
   background-color: rgb(255, 255, 255);
   padding: 2%;
-}
+  flex-direction: column;
+}*/
 .caroussel_viewport {
   width: 100%;
   height: 100%;
@@ -510,7 +513,7 @@ button:hover .button-text {
   min-height: 200px;
   width: 100%;
   height: auto;
-  margin: 0 2%; /* Ajouté pour assurer l'espacement entre les slides, ajuster selon les besoins */
+  margin: 0 2%; 
   background-color: var(--vc-clr-black);
   color: var(--vc-clr-white);
   font-size: 20px;
@@ -519,30 +522,44 @@ button:hover .button-text {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Pour les coins arrondis */
-}
-.carousel__slide {
-  padding: 0;
-  width: 50% !important;
-  height: auto !important;
+  overflow: hidden; 
 }
 
+.carousel__prev,
+.carousel__next {
+  box-sizing: content-box;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 55px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.carousel__prev:hover,
+.carousel__next:hover {
+  color: white;
+  background-color: rgb(0, 0, 0);
+}
 .carousel__item a {
-  opacity: 0; /* Le lien est transparent au départ */
+  opacity: 0; 
   transition: opacity 0.3s ease;
   color: var(--vt-c-blue-dark);
   z-index: 999;
 }
 .carousel__item:hover p {
   transform: translateY(-30px);
-  opacity: 1; /* Le lien devient visible au hover */
+  opacity: 1; 
 }
 .carousel__item:hover a {
-  opacity: 1; /* Le lien devient visible au hover */
+  opacity: 1; 
 }
 .carousel-link {
   position: absolute;
-  bottom: 10px; /* Ou à la distance souhaitée du bas de l'image */
+  bottom: 10px; 
   left: 50%;
   transform: translateX(-50%);
   color: white;
@@ -550,21 +567,21 @@ button:hover .button-text {
 }
 @media screen and (max-width: 768px) {
   .carousel__slide {
-    width: 100% !important; /* Assure que chaque slide prend toute la largeur */
+    width: 100% !important; 
   }
   .carousel__viewport {
-  display: flex; /* Déjà défini mais juste pour être sûr */
-  justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
 }
 
   .carousel__item {
-    margin: 0 5px; /* Ajoute un petit espace sur les côtés si nécessaire */
-    box-sizing: border-box; /* Assure que la largeur inclut les marges */
+    margin: 0 5px; 
+    box-sizing: border-box; 
     width: 100%;
   }
 
-  /* Assure-toi que les images dans les slides sont aussi ajustées en conséquence */
+  
   .carousel__item img {
     width: 100%;
     height: auto;
@@ -582,5 +599,6 @@ button:hover .button-text {
     font-size: 1em;
   }
 }
+
 
 </style>

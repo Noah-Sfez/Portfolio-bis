@@ -1,23 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
-import { defineEmits } from 'vue'; // <- Ceci doit venir de 'vue'
 
-const emit = defineEmits(['scroll-to']);
 
-const scrollTo = (section, event) => {
-  event.preventDefault();
-  emit('scroll-to', section);
-};
 </script>
 <template>
   <header>
     <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/experience">Expériences</RouterLink>
-      <RouterLink to="/contact">Contact</RouterLink>
+      <RouterLink to="/" class="linknav">Home</RouterLink>
+      <RouterLink to="/experience" class="linknav">Expériences</RouterLink>
+      <RouterLink to="/contact" class="linknav">Contact</RouterLink>
     </nav>
   </header>
-  <RouterView @scroll-to="handleScrollTo" />
+  <RouterView/>
   <footer>
     <div>
       <h4>Contact</h4>
@@ -31,7 +25,11 @@ const scrollTo = (section, event) => {
     </div>
   </footer>
 </template>
-<style scoped>
+<style scoped> 
+.linknav {
+ color: white;
+ font-size: 1.2rem;
+}
 nav{
   display: flex;
   justify-content: flex-end;
@@ -43,6 +41,7 @@ nav{
   position: -webkit-sticky; /* Pour le support Safari */
   top: 0;
   z-index: 1000;
+  color: white !important;
 }
 a {
   margin-right: 10%;
