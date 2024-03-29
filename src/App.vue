@@ -30,6 +30,7 @@ import { RouterLink, RouterView } from 'vue-router';
  color: white;
  font-size: 1.2rem;
 }
+
 nav{
   display: flex;
   justify-content: flex-end;
@@ -43,9 +44,11 @@ nav{
   z-index: 1000;
   color: white !important;
 }
+
 a {
   margin-right: 10%;
 }
+
 footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -67,6 +70,7 @@ footer {
   justify-content: center;
   gap: 1rem;
 }
+
 .icones img {
   width: 3rem;
   height: auto;
@@ -88,8 +92,5 @@ footer {
     justify-content: center;
   }
 }
-  
-
-
 </style>
 

@@ -42,11 +42,8 @@
             <span>Send</span>
         </button>
     </form>
-
 </template>
 <script>
-import emailjs from 'emailjs-com';
-
 export default {
   name: 'ContactForm',
   data() {
@@ -57,38 +54,49 @@ export default {
       message: '',
     };
   },
-  mounted() {
-    emailjs.init("TGsDSOgRYW18klcrq"); // Remplace par ton User ID réel
-  },
   methods: {
-  submitForm() {
-    emailjs.send("service_76ykyxl", "template_efxsu0o", {
-      // les paramètres de ton template
-      from_name: this.prenom + ' ' + this.nom,
-      reply_to: this.email,
-      message: this.message,
-      // Assure-toi d'avoir ces noms de paramètre correspondant à ceux de ton template EmailJS
-    }, "ton-secure-token") // Remplace 'ton-secure-token' par ton SecureToken réel
-    .then(
-      (response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        alert('Votre message a été envoyé avec succès !');
-        this.resetForm();
-      }, 
-      (error) => {
-        console.error('FAILED...', error);
-        alert('Une erreur s\'est produite lors de l\'envoi du message.');
+    async submitForm() {
+      const emailData = {
+        senderName: this.prenom + ' ' + this.nom,
+        senderEmail: this.email,
+        message: this.message,
+      };
+      const apiKey = import.meta.env.VITE_ELASTICEMAIL_API_KEY;
+
+      const payload = {
+        sender: emailData.senderEmail,
+        to: "sfz.noah@gmail.com", // Remplace ceci avec ton email
+        subject: "Nouveau message de " + emailData.senderName,
+        bodyHtml: `
+          <p>Nom: ${emailData.senderName}</p>
+          <p>Email: ${emailData.senderEmail}</p>
+          <p>Message: ${emailData.message}</p>
+        `,
+        apiKey: AA9AD6ACDA19F3D17360EA0E825F4185C52F352C3E26FD82A1CE0A2985959B9041315FA7616A4C9431B6E8C72F5473C6, // Assure-toi d'avoir cette variable dans ton fichier .env
+      };
+
+      try {
+        const response = await fetch("https://api.elasticemail.com/v2/email/send", {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const responseData = await response.json();
+        if (response.ok) {
+          alert("Email envoyé avec succès !");
+        } else {
+          alert(`Erreur : ${responseData.error}`);
+        }
+      } catch (error) {
+        console.error("Erreur lors de l'envoi de l'email", error);
+        alert("Erreur lors de l'envoi de l'email. Vérifie la console pour plus de détails.");
       }
-    );
+    },
   },
-  resetForm() {
-    this.prenom = '';
-    this.nom = '';
-    this.email = '';
-    this.message = '';
-  }
-}
-}
+};
 </script>
 <style scoped>
 button {
