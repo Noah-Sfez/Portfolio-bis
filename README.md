@@ -1,4 +1,4 @@
-# Noah SFEZ - Portfolio Web
+# 🇫🇷 Noah SFEZ - Portfolio Web
 
 Bienvenue sur le repository de mon portfolio web! Je suis Noah Sfez, un étudiant passionné par le développement web et l'apprentissage continu de nouvelles technologies. Actuellement, je me concentre sur HTML, CSS, JavaScript, PHP, MySQL, Vue.js et Node.js explorant les possibilités infinies de la création web.
 
@@ -30,9 +30,9 @@ Je suis toujours à la recherche de nouvelles opportunités et collaborations. N
 
 Merci d'avoir pris le temps de regarder mon portfolio. J'ai hâte de travailler sur de nouveaux projets passionnants! 🌟
 
+---
 
-
-# Noah Sfez - Web Portfolio
+# 🇬🇧 Noah Sfez - Web Portfolio
 
 Welcome to the repository of my web portfolio! I am Noah Sfez, a student passionate about web development and the continuous learning of new technologies. Currently, I'm focusing on HTML, CSS, JavaScript, PHP, MySQL, Vue.js, and Node.js, exploring the endless possibilities of web creation.
 
