@@ -83,7 +83,6 @@ export default {
   }
   a {
     display: block;
-    margin-top: 2rem;
     text-align: center;
     font-size: 1.5rem;
     color: var(--vt-c-blue-light);
@@ -143,6 +142,47 @@ export default {
   #caroussel {
     display: none;
   }
+  .carousel__prev,
+.carousel__next {
+  display: none;
+}
+
+ .popup {
+    width: 90% !important;
+    height: 80% !important;
+    padding: 10% 2% 2% 2% !important;
+    overflow-y: auto !important; /* 'auto' est généralement préférable à 'scroll' */
+    /* Le reste de vos styles... */
+  }
+
+
+.popup h3 {
+  font-size: 1.5rem;
+  padding-top: 50%;
+}
+
+.popup p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.popup li {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.pop-img {
+  width: 200px;
+  height: auto;
+}
+.overlay.open {
+  display: flex; /* ou 'block', selon ce qui convient à ton layout */
+  animation: fadeIn 0.5s forwards; /* Utilise l'animation fadeIn quand la pop-up s'ouvre */
+}
+.overlay.close {
+  animation: fadeOut 0.5s forwards; /* Utilise l'animation fadeOut quand la pop-up se ferme */
+}
+
 }
 
 </style>

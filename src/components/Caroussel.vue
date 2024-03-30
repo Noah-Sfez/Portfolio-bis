@@ -195,6 +195,8 @@ export default defineComponent({
       this.selectedSlide = slide;
       this.isPopupVisible = true;
       document.body.classList.add('no-scroll');
+      // mettre un overflow hidden sur le body pour éviter le scroll
+      document.body.style.overflow = 'hidden';
       this.$nextTick(() => {
         const overlay = document.querySelector('.overlay');
         if (overlay) {
@@ -213,6 +215,7 @@ export default defineComponent({
         this.isPopupVisible = false;
         document.body.classList.remove('no-scroll');
       }, 500); // Doit correspondre à la durée de l'animation CSS
+      document.body.style.overflow = 'auto'; // Remettre le scroll sur le body
     },
   },
   beforeUnmount() {
@@ -322,6 +325,7 @@ button.learn-more .button-text {
  font-weight: 700;
  line-height: 1.6;
  text-align: center;
+ font-size: 1rem;
  text-transform: uppercase;
 }
 button:hover .circle {
@@ -403,7 +407,7 @@ button:hover .button-text {
   max-width: none;
 }
 .no-scroll {
-  overflow: hidden;
+  overflow: hidden !important;
   height: 100%;
 }
 .overlay {
@@ -431,10 +435,12 @@ button:hover .button-text {
   position: fixed;
   left: 50%;
   top: 50%;
+  height: 90%;
+  width: auto;
   transform: translate(-50%, -50%);
   z-index: 100;
   background: rgb(255, 255, 255);
-  padding: 20px;
+  padding: 10% 2% 2% 2%; /* haut, droite, bas, gauche */
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -442,8 +448,10 @@ button:hover .button-text {
   align-items: center;
   gap: 20px;
   justify-content: center;
+  overflow-y: scroll;
 }
 .popup h3 {
+  margin-top: 10%;
   color: var(--vt-c-black-text);
 }
 .popup h4 {
@@ -453,32 +461,32 @@ button:hover .button-text {
   color: var(--vt-c-black-text);
 }
 .mascotte-img {
-  width: 75% !important;
-  height: 90% !important;
-  display: block; /* Cela supprime l'espace blanc sous l'image */
+  aspect-ratio: 16/9; 
+  display: block; 
   object-fit: cover;
   max-width: none;
 }
 .carousel__item img {
+  aspect-ratio: 16/9; 
   width: 100%;
   height: auto;
-  display: block; /* Cela supprime l'espace blanc sous l'image */
+  display: block; 
   object-fit: cover;
   max-width: none;
 }
 .carousel__item p {
   transition: transform 0.3s ease;
-  transform: translateY(0px); /* Ce texte se lèvera un peu au hover */
+  transform: translateY(0px); 
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   margin: 0;
-  padding: 10px 20px; /* Espace interne pour le texte */
-  color: white; /* Couleur du texte */
-  font-size: 1.2em; /* Taille du texte */
-  z-index: 10; /* S'assurer que le texte est au-dessus de l'image */
-  text-align: center; /* Centrer le texte */
+  padding: 10px 20px; 
+  color: white; 
+  font-size: 1.2em; 
+  z-index: 10; 
+  text-align: center; 
 }
 .carousel__item::after {
   content: '';
@@ -486,8 +494,8 @@ button:hover .button-text {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 50%; /* Ajuste ceci pour contrôler la hauteur du filtre */
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); /* Gradient du noir à transparent */
+  height: 50%; 
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); 
 }
 .carousel {
   width: 100%;
@@ -510,7 +518,7 @@ button:hover .button-text {
   min-height: 200px;
   width: 100%;
   height: auto;
-  margin: 0 2%; /* Ajouté pour assurer l'espacement entre les slides, ajuster selon les besoins */
+  margin: 0 2%; 
   background-color: var(--vc-clr-black);
   color: var(--vc-clr-white);
   font-size: 20px;
@@ -519,7 +527,7 @@ button:hover .button-text {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Pour les coins arrondis */
+  overflow: hidden; 
 }
 .carousel__slide {
   padding: 0;
@@ -528,17 +536,17 @@ button:hover .button-text {
 }
 
 .carousel__item a {
-  opacity: 0; /* Le lien est transparent au départ */
+  opacity: 0; 
   transition: opacity 0.3s ease;
   color: var(--vt-c-blue-dark);
   z-index: 999;
 }
 .carousel__item:hover p {
   transform: translateY(-30px);
-  opacity: 1; /* Le lien devient visible au hover */
+  opacity: 1; 
 }
 .carousel__item:hover a {
-  opacity: 1; /* Le lien devient visible au hover */
+  opacity: 1; 
 }
 .carousel-link {
   position: absolute;
@@ -557,6 +565,7 @@ button:hover .button-text {
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement */
 }
+
 
   .carousel__item {
     margin: 0 5px; /* Ajoute un petit espace sur les côtés si nécessaire */
@@ -581,6 +590,13 @@ button:hover .button-text {
   .carousel__item p {
     font-size: 1em;
   }
+  .overlay.open {
+  display: flex; /* ou 'block', selon ce qui convient à ton layout */
+  animation: fadeIn 0.5s forwards; /* Utilise l'animation fadeIn quand la pop-up s'ouvre */
+}
+.overlay.close {
+  animation: fadeOut 0.5s forwards; /* Utilise l'animation fadeOut quand la pop-up se ferme */
+}
 }
 
 </style>

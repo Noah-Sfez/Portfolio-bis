@@ -108,7 +108,7 @@ export default defineComponent({
           ],
         },
         {
-          image: new URL('@/assets/images/kermony-screen.png', import.meta.url), altText: 'Description of image 2', class: '', text: 'Kermony Office', undertitle: 'Un back office rentable.', pop: "J'ai réalisé ce back-office pour l'entreprise Kermony Office. Ils avaient besoin d'un endroit ou stocker toutes les données concernant la santé financière de leur client, ainsi que d'un outil pour générer des pdf personnalisés. Egalement, ils souhaitaient une API pour pouvoir utiliser ces données avec leur application web en cours de développement. Je leur ai donc réalisé ce back-office avec que des speed meters personnalisés pour les pdf suite à la réalisation d'une équipe de design. J'ai réalisé ce projet en 4 semaines. ",
+          image: new URL('@/assets/images/kermony-screen.png', import.meta.url), altText: 'Description of image 2', class: '', text: 'Kermony Office', undertitle: 'Un back office rentable.', pop: "J'ai réalisé ce back-office pour l'entreprise Kermony Office. Ils avaient besoin d'un endroit ou stocker toutes les données concernant la santé financière de leur client, ainsi que d'un outil pour générer des pdf personnalisés. Egalement, ils souhaitaient une API pour pouvoir utiliser ces données avec leur application web en cours de développement. J'ai réalisé ce projet en 4 semaines. ",
           technologies: [
             { name: 'HTML', icon: new URL('@/assets/images/html.png', import.meta.url), class: 'html' },
             { name: 'CSS', icon: new URL('@/assets/images/css.png', import.meta.url), class: 'css' },
@@ -598,6 +598,36 @@ button:hover .button-text {
   .carousel__item p {
     font-size: 1em;
   }
+  .html {
+  padding: 10px;
+  width: 50px; 
+  height: 50px; 
+  margin: 0 10px; 
+}
+.css {
+  padding: 10px;
+  width: 50px; 
+  height: 50px; 
+  margin: 0 10px; 
+}
+.javascript {
+  padding: 10px;
+  width: 50px; 
+  height: 50px; 
+  margin: 0 10px; 
+}
+.php {
+  padding: 10px;
+  width: 50px; 
+  height: 50px; 
+  margin: 0 10px; 
+}
+.mysql {
+  padding: 10px;
+  width: 50px; 
+  height: 50px; 
+  margin: 0 10px; 
+}
 }
 
 

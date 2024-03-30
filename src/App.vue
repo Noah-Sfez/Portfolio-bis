@@ -26,6 +26,14 @@ import { RouterLink, RouterView } from 'vue-router';
   </footer>
 </template>
 <style scoped> 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(245, 245, 247);
+  overflow-x: hidden;
+}
+
 .linknav {
  color: white;
  font-size: 1.2rem;
@@ -34,14 +42,11 @@ import { RouterLink, RouterView } from 'vue-router';
 nav{
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding: 1rem;
   background-color: rgba(22, 22, 23, 0.8);
   width: 100%;
   gap: 1%;
-  position: sticky;
-  position: -webkit-sticky; /* Pour le support Safari */
-  top: 0;
-  z-index: 1000;
   color: white !important;
 }
 
