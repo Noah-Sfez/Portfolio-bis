@@ -152,6 +152,7 @@ export default {
     height: 80% !important;
     padding: 10% 2% 2% 2% !important;
     overflow-y: auto !important; /* 'auto' est généralement préférable à 'scroll' */
+    overflow-x: hidden !important;
     /* Le reste de vos styles... */
   }
 
