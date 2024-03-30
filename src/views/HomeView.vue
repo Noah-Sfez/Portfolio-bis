@@ -158,7 +158,6 @@ export default {
 
 .popup h3 {
   font-size: 1.5rem;
-  padding-top: 50%;
 }
 
 .popup p {

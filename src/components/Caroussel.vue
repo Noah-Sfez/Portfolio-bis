@@ -440,7 +440,7 @@ button:hover .button-text {
   transform: translate(-50%, -50%);
   z-index: 100;
   background: rgb(255, 255, 255);
-  padding: 10% 2% 2% 2%; /* haut, droite, bas, gauche */
+  padding: 3% 2% 2% 2%; /* haut, droite, bas, gauche */
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -453,6 +453,7 @@ button:hover .button-text {
 .popup h3 {
   margin-top: 10%;
   color: var(--vt-c-black-text);
+  font-size: 2rem;
 }
 .popup h4 {
   color: var(--vt-c-black-text);
