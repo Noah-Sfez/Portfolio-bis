@@ -1,39 +1,113 @@
 <script>
 import Form from '../components/Form.vue';
-
+import Card from '../components/Card.vue';
 export default {
   components: {
-    Form
+    Form, 
+    Card
+  },
+  data() {
+    return {
+      isModalOpen: false, // État initial du modal, caché
+    }
+  },
+  methods: {
+    toggleModal() {
+      this.isModalOpen = !this.isModalOpen; // Bascule l'état du modal
+    }
   }
 };
-
-
 </script>
-
-
 <template>
-<Form style="margin-top: 60px;"/>
+<div class="contact">
+  <!--
+  <Form style="margin-top: 60px;"/>
+  -->
+  <Card />
+  <div class="cv">
+    <h2>Télécharger mon CV.</h2>
+    <div style="display: flex;">
+      <img src="../assets/images/cv.png" class="cv-img" alt="" @click="toggleModal">
+    </div>
+    <a href="../assets/CV-Noah-Sfez-Alternance.pdf" download="CV-Noah-Sfez-Alternance.pdf">
 
-<div class="cv">
-<h2>Télécharger mon CV.</h2>
-<button class="button">
-    <a href="../../public/CV-Noah-Sfez-Alternance.pdf" download="CV_Noah-SFEZ.pdf">
-
-        <p class="text">
-  Download 
-  </p>
-  <div class="svg">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-download" viewBox="0 0 16 16"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path> </svg>
-  </div>
+      <button class="botao">
+  <svg
+    class="mysvg"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    height="24px"
+    width="24px"
+    >
+      <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+      <g
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        id="SVGRepo_tracerCarrier"
+      ></g>
+      <g id="SVGRepo_iconCarrier">
+        <g id="Interface / Download">
+          <path
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-width="2"
+            stroke="#f1f1f1"
+            d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
+            id="Vector"
+          ></path>
+        </g>
+      </g>
+    </svg>
+    <span class="texto">Download</span>
+  </button>
     </a>
-  
-</button>
+    
+
+  </div>
+
+  <!-- Modal Structure -->
+  <div v-if="isModalOpen" class="modal" @click.self="toggleModal">
+    <div class="modal-content">
+      <img src="../assets/images/cv.png" class="modal-cv-img" alt="">
+    </div>
+  </div>
 </div>
-
-
+  
 </template>
 
 <style scoped>
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 10px;
+}
+
+.modal-cv-img {
+  width: 100%;
+  max-width: 550px; /* Adapte cette taille à tes besoins */
+}
+
+
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 60px;
+  justify-content: center;
+}
 .cv {
     display: flex;
     justify-content: center;
@@ -43,54 +117,117 @@ export default {
     flex-direction: column;
     
 }
+.cv-img {
+    margin: 20px;
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.cv-img:hover {
+    transform: scale(1.1);
+}
 
 
-
-.button {
-  padding: 0.8rem 4rem;
+.botao {
+  width: 125px;
+  height: 45px;
+  border-radius: 20px;
   border: none;
-  outline: none;
-  font-size: 1.3rem;
-  border-radius: 0.3rem;
-  font-weight: 600;
-  background-color: rgb(0, 102, 204);
-  position: relative;
-  overflow: hidden;
+  box-shadow: 1px 1px rgba(107, 221, 215, 0.37);
+  padding: 5px 10px;
+  background-color: var(--vt-c-blue-light);
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-weight: 505;
+  font-size: 16px;
+  line-height: 1;
   cursor: pointer;
-  transition: 0.4s ease-in-out;
-  border: 3px solid  rgb(0, 102, 204);
+  filter: drop-shadow(0 0 10px rgba(59, 190, 230, 0.568));
+  transition: 0.5s linear;
 }
 
-.button .text {
+.botao .mysvg {
+  display: none;
+}
+
+.botao:hover {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: 0.5s linear;
+}
+
+.botao:hover .texto {
+  display: none;
+}
+
+.botao:hover .mysvg {
+  display: inline;
+}
+
+.botao:hover::after {
+  content: "";
   position: absolute;
-  left: 1.8rem;
-  top: 1.3rem;
-  transition: 0.4s ease-in-out;
-  color: white;
+  width: 16px;
+  height: 3px;
+  background-color: var(--vt-c-blue-light);
+  margin-left: -20px;
+  animation: animate 0.9s linear infinite;
 }
 
-.svg {
-  transform: translateY(-20px) rotate(30deg);
-  opacity: 0;
-  width: 2rem;
-  transition: 0.4s ease-in-out;
+.botao:hover::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3.5px solid transparent;
+  border-top: 3.5px solid #fff;
+  border-right: 3.5px solid #fff;
+  border-radius: 50%;
+  animation: animateC 2s linear infinite;
 }
 
-.button:hover {
-  background-color: white;
+@keyframes animateC {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.button:hover .svg {
-  display: inline-block;
-  transform: translateY(0px) rotate(0deg);
-  opacity: 1;
+@keyframes animate {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(20px);
+  }
 }
 
-.button:hover .text {
-  opacity: 0;
+
+@media screen and (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+    margin: 0;
+  }
+  .cv {
+    margin: 0 0 2rem 0;
+  }
+  .cv-img {
+    width: 200px;
+  }
+  .modal-cv-img {
+    width: 100%;
+    max-width: 350px; /* Adapte cette taille à tes besoins */
+  }
 }
 
-.button:active {
-  scale: 0.97;
-}
+
+
 </style>

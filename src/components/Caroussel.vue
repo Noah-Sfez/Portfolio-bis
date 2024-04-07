@@ -362,47 +362,47 @@ button:hover .button-text {
 .technologies {
   display: flex;
   justify-content: center;
-  margin-top: 20px; /* Espace au-dessus de la liste des icônes */
+  margin-top: 20px; 
 }
 .tech-icon {
-  width: 30px; /* Ou la taille que tu préfères */
-  height: 30px; /* Ou la taille que tu préfères */
-  margin: 0 5px; /* Espace entre les icônes */
+  width: 30px;
+  height: 30px; 
+  margin: 0 5px; 
 }
 .html {
   padding: 10px;
-  width: 60px; /* Ou la taille que tu préfères */
-  height: 60px; /* Ou la taille que tu préfères */
-  margin: 0 10px; /* Espace entre les icônes */
+  width: 60px; 
+  height: 60px; 
+  margin: 0 10px; 
 }
 .css {
   padding: 10px;
-  width: 60px; /* Ou la taille que tu préfères */
-  height: 60px; /* Ou la taille que tu préfères */
-  margin: 0 10px; /* Espace entre les icônes */
+  width: 60px; 
+  height: 60px; 
+  margin: 0 10px; 
 }
 .javascript {
   padding: 10px;
-  width: 60px; /* Ou la taille que tu préfères */
-  height: 60px; /* Ou la taille que tu préfères */
-  margin: 0 10px; /* Espace entre les icônes */
+  width: 60px; 
+  height: 60px; 
+  margin: 0 10px; 
 }
 .php {
   padding: 10px;
-  width: 60px; /* Ou la taille que tu préfères */
-  height: 60px; /* Ou la taille que tu préfères */
-  margin: 0 10px; /* Espace entre les icônes */
+  width: 60px; 
+  height: 60px; 
+  margin: 0 10px; 
 }
 .mysql {
   padding: 10px;
-  width: 60px; /* Ou la taille que tu préfères */
-  height: 60px; /* Ou la taille que tu préfères */
-  margin: 0 10px; /* Espace entre les icônes */
+  width: 60px; 
+  height: 60px;
+  margin: 0 10px; 
 }
 .pop-img {
   width: 50%;
   height: auto;
-  display: block; /* Cela supprime l'espace blanc sous l'image */
+  display: block;
   object-fit: cover;
   max-width: none;
 }
@@ -411,25 +411,25 @@ button:hover .button-text {
   height: 100%;
 }
 .overlay {
-  position: fixed; /* ou absolute */
-  display: none; /* Ajouté pour commencer avec la pop-up cachée */
+  position: fixed; 
+  display: none; 
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* couleur semi-transparente pour le fond */
+  background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 50; /* Assure-toi que cela est au-dessus de tout le contenu de la page */
+  z-index: 50; 
 }
 /* Classe pour gérer l'état 'ouvert' de la pop-up */
 .overlay.open {
-  display: flex; /* ou 'block', selon ce qui convient à ton layout */
-  animation: fadeIn 0.5s forwards; /* Utilise l'animation fadeIn quand la pop-up s'ouvre */
+  display: flex;
+  animation: fadeIn 0.5s forwards; 
 }
 .overlay.close {
-  animation: fadeOut 0.5s forwards; /* Utilise l'animation fadeOut quand la pop-up se ferme */
+  animation: fadeOut 0.5s forwards; 
 }
 .popup {
   position: fixed;
@@ -562,15 +562,15 @@ button:hover .button-text {
     width: 100% !important; /* Assure que chaque slide prend toute la largeur */
   }
   .carousel__viewport {
-  display: flex; /* Déjà défini mais juste pour être sûr */
-  justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
 }
 
 
   .carousel__item {
-    margin: 0 5px; /* Ajoute un petit espace sur les côtés si nécessaire */
-    box-sizing: border-box; /* Assure que la largeur inclut les marges */
+    margin: 0 5px; 
+    box-sizing: border-box; 
     width: 100%;
   }
 

@@ -93,6 +93,7 @@ export default defineComponent({
   data() {
     return {
       slides: [
+
         {
           image: new URL('@/assets/images/seasons-screen.png', import.meta.url), altText: 'Description of image 1', class: '', text: 'Seasons', undertitle: 'Mise à jour saisonnière.', pop: "Ce site présente les différentes saisons de l'année. Il a été réalisé dans le cadre de mes cours à l'IIM Digital School, où l'objectif était de réaliser un site web avec une librairie qui nous était inconnue afin d'apprendre à utiliser utiliser de nouvelles technologies simplement en se servant de la documentation. J'ai donc réalisé ce site avec la librairie Fullpage.js en une matinée. ",
           link: 'https://github.com/Noah-Sfez/fullpage.js-training',

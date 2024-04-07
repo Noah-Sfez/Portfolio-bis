@@ -3,13 +3,15 @@ import Caroussel from '../components/Caroussel.vue';
 import Timeline from '../components/Timeline.vue';
 import Form from '../components/Form.vue';
 import CarousselMobile from '../components/CarousselMobile.vue';
+import Technos from '../components/Techno.vue';
 
 export default {
   components: {
     Caroussel,
     Timeline,
     Form, 
-    CarousselMobile
+    CarousselMobile,
+    Technos
   },
   methods: {
     handleScrollTo(sectionId) {
@@ -34,10 +36,13 @@ export default {
       <img src="../assets/images/photo-presentation 2.png" alt="Photo-de-profil" class="imgprofil"data-aos="fade-up"
      data-aos-duration="3000">
     </div>
-    <!-------------------------------- Expériences ---------------------------->
-    <Timeline id="timeline" />
+    <!-------------------------------- Technos ---------------------------->
+    <Technos />
     <!-------------------------------- Caroussel ---------------------------->
     <!--<h2 class="title-project">Mes projets.</h2>-->
+    <h2 class="title-project">Mes projets.</h2>
+      <p class="title-project-p">Voici une sélection des quelques projets que j'ai pu réaliser jusqu'à maintenant.</p>
+      <p class="title-project-p"> Pour en voir davantage, rendez-vous sur mon <a href="https://github.com/Noah-Sfez" target="_blank" class="github-link" style="text-decoration: underline;">Github</a></p>
     <div id="caroussel">
       <Caroussel ref="projetsRef" />
     </div>
@@ -46,7 +51,7 @@ export default {
     <div id="carousselMobile">
       <CarousselMobile />
     </div>
-   
+    <!-------------------------------- Caroussel ---------------------------->
 
     <!-------------------------------- Form ---------------------------->
     <Form data-aos="fade-up"
@@ -71,6 +76,7 @@ export default {
   }
   .underTitle {
     margin-top: 5%;
+    text-align: center;
   }
   .title-general {
     font-size: 3rem;
@@ -82,7 +88,6 @@ export default {
     color: var(--vt-c-black-text);
   }
   a {
-    display: block;
     text-align: center;
     font-size: 1.5rem;
     color: var(--vt-c-blue-light);
@@ -96,6 +101,12 @@ export default {
     font-size: 2rem;
     color: var(--vt-c-black-text);
     margin-top: 5%;
+  }
+  .title-project-p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--vt-c-black-text);
+    margin-top: 2%;
   }
 
   #carousselMobile {
@@ -182,7 +193,12 @@ export default {
 .overlay.close {
   animation: fadeOut 0.5s forwards; /* Utilise l'animation fadeOut quand la pop-up se ferme */
 }
-
+.title-project {
+  font-size: 1.5rem;
+}
+.title-project-p {
+  font-size: 0.8rem;
+}
 }
 
 </style>

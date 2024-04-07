@@ -1,3 +1,15 @@
+
+<script>
+import Timeline from '../components/Timeline.vue';
+
+export default {
+  components: {
+    Timeline
+  },
+};
+
+</script>
+
 <template>
     <main>
     <h1>En cours de développement...</h1>
@@ -7,9 +19,11 @@
             <div class="loader"></div>
         </div>
 
-
-
-
+<!--
+      <div>
+        <Timeline id="timeline" />
+      </div>-->
+      
     
     </main>
 
@@ -25,8 +39,9 @@ main {
   align-items: center;
   flex-direction: column;
   height: 79vh;
-  background: #f0f0f0;
   gap: 19rem;
+
+  background: #f0f0f0;
 }
 
 h1 {
