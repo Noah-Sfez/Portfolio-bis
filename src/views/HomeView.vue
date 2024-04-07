@@ -136,6 +136,7 @@ export default {
 
 @media screen and (max-width: 768px) {
   h1 {
+    margin-top: 20%;
     font-size: 2rem;
   }
   p {
@@ -144,8 +145,13 @@ export default {
   a {
     font-size: 1rem;
   }
+  .firstDiv {
+    height: 90vh;
+  }
+
   .imgprofil {
-    width: 40%;
+    margin-top: 9%;
+    width: 70%;
   }
   #carousselMobile {
     display: block !important ;
