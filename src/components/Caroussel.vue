@@ -140,7 +140,7 @@ export default defineComponent({
           ],
         },
         {
-          image: new URL('@/assets/images/nosa-screen.png', import.meta.url), altText: 'Description of image 2', class: '', text: 'Nosa Coach', undertitle: 'Un site avec du style.', pop: 'Nosa Coach est un site de coaching sportif. Il a été réalisé en équipe de 4 personnes. Nous avons utilisé Vue.js pour le front-end et Node.js pour le back-end. Nous avons également utilisé MongoDB pour la base de données. Nous avons travaillé en méthode agile et avons utilisé Git pour le versionning. Nous avons réalisé ce projet en 3 semaines.',
+          image: new URL('@/assets/images/nosa-screen.png', import.meta.url), altText: 'Description of image 2', class: '', text: 'Nosa Coach', undertitle: 'Un site avec du style.', pop: 'Nosa Coach est un site vitrine réalisé pour une conseillère en image. La cliente souhaitait un site qui mettait en avant ses offres et ses services. J\'ai utilisé la méthode agile pour la confection de ce site web, afin qu\'il convienne au mieux à la cliente. Pour les maquettes Figma ainsi que le développement du site, cela m\'a pris environ 2 semaines.',
           site:'https://nosacoach.com/',
           technologies: [
             { name: 'HTML', icon: new URL('@/assets/images/html.png', import.meta.url), class: 'html' },
@@ -151,7 +151,7 @@ export default defineComponent({
           ],
         },
         {
-          image: new URL('@/assets/images/pokemon-screen.png', import.meta.url), altText: 'Description of image 2', class: '', text: 'Pokemon Shop', undertitle: 'Achetez-les tous.', pop: 'Pokemon Shop est un site de vente de jouets. Il a été réalisé en équipe de 4 personnes. Nous avons utilisé Vue.js pour le front-end et Node.js pour le back-end. Nous avons également utilisé MongoDB pour la base de données. Nous avons travaillé en méthode agile et avons utilisé Git pour le versionning. Nous avons réalisé ce projet en 3 semaines.',
+          image: new URL('@/assets/images/pokemon-screen.png', import.meta.url), altText: 'Description of image 2', class: '', text: 'Pokemon Shop', undertitle: 'Achetez-les tous.', pop: 'Pokemon Shop est un faux site e-commerce de pokemon. Réalisé dans le cadre de mes études à l\'IIM Digital School, ce site a pour but de mettre en pratique les connaissances acquises en Javascript. J\'ai utilisé l\'API Pokemon pour récupérer toutes les données des Pokemons et les afficher sur le site. J\'ai également développé un panier d\'achat et un système de filtre pour les Pokemons. Ce projet a été réalisé en 1 semaine.',
           site:'https://noah-sfez.github.io/pokemon-shop-API/',
           technologies: [
             { name: 'HTML', icon: new URL('@/assets/images/html.png', import.meta.url), class: 'html' },
