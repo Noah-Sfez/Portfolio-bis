@@ -23,11 +23,12 @@ export default {
   <!--
   <Form style="margin-top: 60px;"/>
   -->
-  <Card />
+  <Card data-aos="fade-right"
+     data-aos-offset="300" data-aos-duration="1000" />
   <div class="cv">
     <h2>Télécharger mon CV.</h2>
     <div style="display: flex;">
-      <img src="../assets/images/cv.png" class="cv-img" alt="" @click="toggleModal">
+      <img src="../assets/images/cv.png" class="cv-img" data-aos="zoom-out" data-aos-duration="1000" data-aos-offset="200" alt="" @click="toggleModal">
     </div>
     <a href="../assets/CV-Noah-Sfez-Alternance.pdf" download="CV-Noah-Sfez-Alternance.pdf">
 

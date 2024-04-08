@@ -37,14 +37,16 @@ export default {
 <template>
   <div class="presentation-container">
     <div class="mouse-shadow" :style="{left: mouseX + 'px', top: mouseY + 'px', opacity: isShadowVisible ? 0.5 : 0 }"></div>
-    <img src="../assets/images/Photo-CV(2).png" alt="Photo de Profil" title="Noah Sfez">
+    <img src="../assets/images/Photo-CV(2).png" alt="Photo de Profil" title="Noah Sfez" data-aos="flip-right" data-aos-duration="1000">
     <div class="text-container">
-        <p>Bienvenue sur mon portfolio. Je suis un développeur web passionné par la création de solutions digitales élégantes et efficaces. Voici quelques-unes des technologies avec lesquelles j'aime travailler, classées par catégorie :</p>
+        <p data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">Bienvenue sur mon portfolio. Je suis un développeur web passionné par la création de solutions digitales élégantes et efficaces. Voici quelques-unes des technologies avec lesquelles j'aime travailler, classées par catégorie :</p>
         <div class="technologies-container">
           <div class="technologies-column" v-for="(techList, category) in technologiesCategories" :key="category">
             <h2>{{ category }}</h2>
             <ul>
-              <li v-for="tech in techList" :key="tech">{{ tech }}</li>
+              <li v-for="tech in techList" :key="tech" data-aos="fade-up"
+     data-aos-anchor-placement="top-center" data-aos-duration="900" data-aos-offset="-200">{{ tech }}</li>
             </ul>
           </div>
         </div>
