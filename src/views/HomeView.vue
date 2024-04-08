@@ -203,7 +203,7 @@ export default {
   font-size: 1.5rem;
 }
 .title-project-p {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 }
 

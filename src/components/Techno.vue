@@ -40,7 +40,7 @@ export default {
     <img src="../assets/images/Photo-CV(2).png" alt="Photo de Profil" title="Noah Sfez" data-aos="flip-right" data-aos-duration="1000">
     <div class="text-container">
         <p data-aos="fade-up"
-     data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">Bienvenue sur mon portfolio. Je suis un développeur web passionné par la création de solutions digitales élégantes et efficaces. Voici quelques-unes des technologies avec lesquelles j'aime travailler, classées par catégorie :</p>
+     data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">Bienvenue sur mon portfolio. Je suis un développeur web passionné par la création de solutions digitales élégantes et efficaces. Voici quelques-unes des technologies avec lesquelles j'aime travailler:</p>
         <div class="technologies-container">
           <div class="technologies-column" v-for="(techList, category) in technologiesCategories" :key="category">
             <h2>{{ category }}</h2>
