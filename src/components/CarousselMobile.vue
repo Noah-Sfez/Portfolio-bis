@@ -93,6 +93,21 @@ export default defineComponent({
   data() {
     return {
       slides: [
+        
+        {
+          image: new URL('@/assets/images/sentimental-screen.png', import.meta.url), altText: 'Description of image 2', class: '', text: 'Sentimental AI', undertitle: 'Positif ou négatif.', pop: "Sentimental AI est un site qui permet d'analyser si des commentaires ou du texte en général a un ton plutôt positif ou négatif. Ce site a été réalisé dans le 4 cadre d'un cours sur l'intelligence artificielle à l'IIM Digital School. Nous avons utilisé la librairie Sentimental afin de réaliser ce site. Nous avions une matinée pour réaliser ce projet et il est aujourd'hui opérationnel.",
+          link: 'https://github.com/Noah-Sfez/Sentimental-AI',
+          technologies: [
+            { name: 'HTML', icon: new URL('@/assets/images/html.png', import.meta.url), class: 'html' },
+            { name: 'CSS', icon: new URL('@/assets/images/css.png', import.meta.url), class: 'css' },
+            { name: 'Javascript', icon: new URL('@/assets/images/javascript.png', import.meta.url), class: 'javascript' },
+          ],
+          apis: [
+          ],
+          librairie: [
+            { name: 'Sentimental', text: "Utilisation de la librairie afin de reconnaître le sentiment des commentaires rentrés dans l'application web." },
+          ],
+        },
         {
           image: new URL('@/assets/images/kermony-screen.png', import.meta.url), altText: 'Description of image 2', class: '', text: 'Kermony Office', undertitle: 'Un back office rentable.', pop: "J'ai réalisé ce back-office pour l'entreprise Kermony Office. Ils avaient besoin d'un endroit ou stocker toutes les données concernant la santé financière de leur client, ainsi que d'un outil pour générer des pdf personnalisés. Egalement, ils souhaitaient une API pour pouvoir utiliser ces données avec leur application web en cours de développement. J'ai réalisé ce projet en 4 semaines. ",
           technologies: [
@@ -108,20 +123,6 @@ export default defineComponent({
           ],
           apis: [
             { name: 'API Kermony', apiText: "Création d'une API leur permettant d'utiliser les données de ce back office avec leur application web en cours de développement." },
-          ],
-        },
-        {
-          image: new URL('@/assets/images/sentimental-screen.png', import.meta.url), altText: 'Description of image 2', class: '', text: 'Sentimental AI', undertitle: 'Positif ou négatif.', pop: "Sentimental AI est un site qui permet d'analyser si des commentaires ou du texte en général a un ton plutôt positif ou négatif. Ce site a été réalisé dans le 4 cadre d'un cours sur l'intelligence artificielle à l'IIM Digital School. Nous avons utilisé la librairie Sentimental afin de réaliser ce site. Nous avions une matinée pour réaliser ce projet et il est aujourd'hui opérationnel.",
-          link: 'https://github.com/Noah-Sfez/Sentimental-AI',
-          technologies: [
-            { name: 'HTML', icon: new URL('@/assets/images/html.png', import.meta.url), class: 'html' },
-            { name: 'CSS', icon: new URL('@/assets/images/css.png', import.meta.url), class: 'css' },
-            { name: 'Javascript', icon: new URL('@/assets/images/javascript.png', import.meta.url), class: 'javascript' },
-          ],
-          apis: [
-          ],
-          librairie: [
-            { name: 'Sentimental', text: "Utilisation de la librairie afin de reconnaître le sentiment des commentaires rentrés dans l'application web." },
           ],
         },
         {
