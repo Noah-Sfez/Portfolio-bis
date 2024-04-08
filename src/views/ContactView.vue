@@ -119,15 +119,29 @@ export default {
     
 }
 .cv-img {
-    margin: 20px;
-    width: 300px;
-    height: auto;
-    cursor: pointer;
-    transition: 0.4s ease-in-out;
+  margin: 20px;
+  width: 300px;
+  height: auto;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  /* Ajout de l'animation */
+  animation: pulse 1.5s infinite;
 }
-.cv-img:hover {
-    transform: scale(1.1);
+
+/* Définition de l'animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Taille initiale */
+  }
+  50% {
+    transform: scale(1.04); /* L'image s'agrandit de 5% */
+  }
+  100% {
+    transform: scale(1); /* Retour à la taille initiale */
+  }
 }
+
+
 
 
 .botao {
