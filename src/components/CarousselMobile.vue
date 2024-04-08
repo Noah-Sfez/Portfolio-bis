@@ -93,21 +93,6 @@ export default defineComponent({
   data() {
     return {
       slides: [
-
-        {
-          image: new URL('@/assets/images/seasons-screen.png', import.meta.url), altText: 'Description of image 1', class: '', text: 'Seasons', undertitle: 'Mise à jour saisonnière.', pop: "Ce site présente les différentes saisons de l'année. Il a été réalisé dans le cadre de mes cours à l'IIM Digital School, où l'objectif était de réaliser un site web avec une librairie qui nous était inconnue afin d'apprendre à utiliser utiliser de nouvelles technologies simplement en se servant de la documentation. J'ai donc réalisé ce site avec la librairie Fullpage.js en une matinée. ",
-          link: 'https://github.com/Noah-Sfez/fullpage.js-training',
-          technologies: [
-            { name: 'Javascript', icon: new URL('@/assets/images/javascript.png', import.meta.url), class: 'javascript'},
-            { name: 'HTML', icon: new URL('@/assets/images/html.png', import.meta.url), class: 'html' },
-            { name: 'CSS', icon: new URL('@/assets/images/css.png', import.meta.url), class: 'css' }
-          ],
-          apis: [
-          ],
-          librairie: [
-            { name: 'Fullpage.js', text: "Réalisation du site avec cette librairie afin d'avoir un site en fullpage et fluide." },
-          ],
-        },
         {
           image: new URL('@/assets/images/kermony-screen.png', import.meta.url), altText: 'Description of image 2', class: '', text: 'Kermony Office', undertitle: 'Un back office rentable.', pop: "J'ai réalisé ce back-office pour l'entreprise Kermony Office. Ils avaient besoin d'un endroit ou stocker toutes les données concernant la santé financière de leur client, ainsi que d'un outil pour générer des pdf personnalisés. Egalement, ils souhaitaient une API pour pouvoir utiliser ces données avec leur application web en cours de développement. J'ai réalisé ce projet en 4 semaines. ",
           technologies: [
@@ -161,16 +146,6 @@ export default defineComponent({
             { name: 'HTML', icon: new URL('@/assets/images/html.png', import.meta.url), class: 'html' },
             { name: 'CSS', icon: new URL('@/assets/images/css.png', import.meta.url), class: 'css' },
             { name: 'Javascript', icon: new URL('@/assets/images/javascript.png', import.meta.url), class: 'javascript' },
-          ],
-          apis: [
-          ],
-        },
-        {
-          image: new URL('@/assets/images/mongoo-screen.png', import.meta.url), altText: 'Description of image 2', class: '', text: 'Mongoo', undertitle: 'Le visuel qui donne faim.', pop: "J'ai pu réalisé ",
-          link: 'https://github.com/Noah-Sfez/Rendu-SCSS',
-          technologies: [
-            { name: 'HTML', icon: new URL('@/assets/images/html.png', import.meta.url), class: 'html' },
-            { name: 'CSS', icon: new URL('@/assets/images/css.png', import.meta.url), class: 'css' },
           ],
           apis: [
           ],

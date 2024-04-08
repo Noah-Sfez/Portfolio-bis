@@ -53,12 +53,12 @@ export default {
     </div>
     <!-------------------------------- Caroussel ---------------------------->
 
-    <!-------------------------------- Form ---------------------------->
+    <!-------------------------------- Form --------------------------
     <Form data-aos="fade-up"
      data-aos-easing="ease-in-sine"
      data-aos-offset="400"
      data-aos-duration="1200"
-     />
+     />-->
     
   </main>
 </template>

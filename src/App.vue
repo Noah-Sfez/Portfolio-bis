@@ -211,6 +211,7 @@ footer {
   font-size: 36px;
 }
 
+
 .burger-icon span {
   display: block;
   width: 35px;
