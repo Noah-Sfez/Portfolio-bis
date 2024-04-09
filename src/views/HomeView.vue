@@ -152,7 +152,7 @@ export default {
   .imgprofil {
     position: absolute;
     bottom: 0;
-    width: 70%;
+    width: 35vh;
   }
   #carousselMobile {
     display: block !important ;
