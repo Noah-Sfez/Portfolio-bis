@@ -147,6 +147,7 @@ export default {
   }
   .firstDiv {
     height: 90vh;
+    position: relative;
   }
 
   .imgprofil {
