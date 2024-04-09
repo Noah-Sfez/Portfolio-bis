@@ -150,7 +150,8 @@ export default {
   }
 
   .imgprofil {
-    margin-top: 9%;
+    position: absolute;
+    bottom: 0;
     width: 70%;
   }
   #carousselMobile {
