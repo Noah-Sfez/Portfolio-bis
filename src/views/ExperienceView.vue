@@ -12,6 +12,8 @@ export default {
 
 <template>
     <main>
+      <!-- 
+    
     <h1>En cours de développement...</h1>
         <div class="container">
             <div class="loader"></div>
@@ -19,10 +21,12 @@ export default {
             <div class="loader"></div>
         </div>
 
-<!--
-      <div>
+    
+      -->
+      <div style="background-color: black; width: 100%;">
         <Timeline id="timeline" />
-      </div>-->
+      </div>
+
       
     
     </main>
@@ -38,10 +42,9 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 79vh;
   gap: 19rem;
 
-  background: #f0f0f0;
+  background: #000000;
 }
 
 h1 {
@@ -54,10 +57,6 @@ h1 {
     font-size: 2rem;
     text-align: center;
     margin-top: 50px
-  }
-  main {
-    height: 60vh;
-  
   }
 }
 
