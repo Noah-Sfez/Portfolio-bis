@@ -1,5 +1,6 @@
 <script>
 import Social from '../components/Social.vue';
+import { RouterLink, RouterView } from 'vue-router';
 
 export default {
   components: {
@@ -41,7 +42,8 @@ export default {
     <div class="text-container">
         <p data-aos="fade-up"
      data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">Bienvenue sur mon portfolio. Je suis un développeur web passionné par la création de solutions digitales élégantes et efficaces. Voici quelques-unes des technologies avec lesquelles j'aime travailler:</p>
-        <div class="technologies-container">
+        <RouterLink to="/experience">En savoir plus ></RouterLink>   
+     <div class="technologies-container">
           <div class="technologies-column" v-for="(techList, category) in technologiesCategories" :key="category">
             <h2>{{ category }}</h2>
             <ul>
@@ -64,11 +66,15 @@ export default {
 
 p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+
   width: 80%;
   line-height: 3;
 }
 
+a {
+  margin-bottom: 20px;
+  color: var(--vt-c-blue-dark);
+}
 
 .mouse-shadow {
   position: absolute;
