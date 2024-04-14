@@ -34,7 +34,7 @@ export default {
                 <div class="card" >
                 <div class="info" data-aos="fade-left"
                 data-aos-anchor="#example-anchor"
-                data-aos-offset="200"
+                data-aos-offset="600"
                 data-aos-duration="1500"
                 data-aos-easing="ease-in-sine">
                     <h3 class="title">Kermony Office | Back-end</h3>
@@ -45,7 +45,7 @@ export default {
                 <div class="card">
                 <div class="info" data-aos="fade-right"
                 data-aos-anchor="#example-anchor"
-                data-aos-offset="400"
+                data-aos-offset="800"
                 data-aos-duration="1500"
                 data-aos-easing="ease-in-sine">
                     <h3 class="title">Musée du Jouet | Chef de Projet</h3>
@@ -56,7 +56,7 @@ export default {
                 <div class="card">
                 <div class="info" data-aos="fade-left"
                 data-aos-anchor="#example-anchor"
-                data-aos-offset="800"
+                data-aos-offset="1200"
                 data-aos-duration="2500"
                 data-aos-easing="ease-in-sine">
                     <h3 class="title">Nosa Coach Front-end</h3>
@@ -67,7 +67,7 @@ export default {
                 <div class="card">
                 <div class="info" data-aos="fade-right"
                 data-aos-anchor="#example-anchor"
-                data-aos-offset="1200"
+                data-aos-offset="1400"
                 data-aos-duration="2000"
                 data-aos-easing="ease-in-sine">
                     <h3 class="title">Stage chez Flowerbox</h3>
