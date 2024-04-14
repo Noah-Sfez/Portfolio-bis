@@ -44,6 +44,9 @@ p {
     display: flex;
     justify-content: start;  
     }
+    .loader {
+        top: 70% !important; 
+    }
 }
 
 /* Loader */
