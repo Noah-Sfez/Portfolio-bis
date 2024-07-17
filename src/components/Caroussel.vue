@@ -417,7 +417,7 @@ button:hover .button-text {
   transform: translate(-50%, -50%);
   z-index: 100;
   background: rgb(255, 255, 255);
-  padding: 3% 2% 2% 2%; /* haut, droite, bas, gauche */
+  padding: 3% 2% 2% 2%; 
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -528,7 +528,7 @@ button:hover .button-text {
 }
 .carousel-link {
   position: absolute;
-  bottom: 10px; /* Ou à la distance souhaitée du bas de l'image */
+  bottom: 10px; 
   left: 50%;
   transform: translateX(-50%);
   color: white;
@@ -536,7 +536,7 @@ button:hover .button-text {
 }
 @media screen and (max-width: 768px) {
   .carousel__slide {
-    width: 100% !important; /* Assure que chaque slide prend toute la largeur */
+    width: 100% !important; 
   }
   .carousel__viewport {
   display: flex;
@@ -551,7 +551,6 @@ button:hover .button-text {
     width: 100%;
   }
 
-  /* Assure-toi que les images dans les slides sont aussi ajustées en conséquence */
   .carousel__item img {
     width: 100%;
     height: auto;
@@ -569,11 +568,11 @@ button:hover .button-text {
     font-size: 1em;
   }
   .overlay.open {
-  display: flex; /* ou 'block', selon ce qui convient à ton layout */
-  animation: fadeIn 0.5s forwards; /* Utilise l'animation fadeIn quand la pop-up s'ouvre */
+  display: flex; 
+  animation: fadeIn 0.5s forwards; 
 }
 .overlay.close {
-  animation: fadeOut 0.5s forwards; /* Utilise l'animation fadeOut quand la pop-up se ferme */
+  animation: fadeOut 0.5s forwards; 
 }
 }
 
