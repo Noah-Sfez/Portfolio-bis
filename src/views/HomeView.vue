@@ -242,7 +242,7 @@ body {
 
 #vue-logo {
     top: 60%;
-    left: 60%;
+    left: 65%;
     transform: rotate(-15deg);
     width: 95px;
     height: 65px;
@@ -291,17 +291,20 @@ body {
 }
 
 .title-general {
-    font-size: 3rem;
-    color: var(--vt-c-black-text);
+    font-size: 5rem;
+    background: linear-gradient(to bottom, #ffffff, #444444); /* Dégradé vertical */
+    -webkit-background-clip: text; /* Appliquer le dégradé au texte */
+    color: transparent; /* Rendre le texte transparent pour voir le dégradé */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Ombre portée floue */
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .soustitle-general {
     text-align: center;
     font-size: 1.5rem;
     color: var(--vt-c-black-text);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
 }
 
 a {
