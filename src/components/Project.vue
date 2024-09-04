@@ -435,6 +435,7 @@ button:hover .svg-icon {
     flex-direction: column;
     align-items: center;
     padding: 20px; /* Ajoute du padding pour respirer */
+    overflow: hidden;
 }
 .body h2 {
     font-size: 2rem;
@@ -462,7 +463,7 @@ button:hover .svg-icon {
 }
 @media screen and (max-width: 768px) {
   .projects-container {
-    height: 150vh;
+    height: 160vh;
   }
   
 }
