@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       technologiesCategories: {
-        'Front-end': ['HTML', 'CSS / SCSS', 'JavaScript', 'Vue.js', 'Bootsrap'],
+        'Front-end': ['HTML', 'CSS / SCSS', 'JavaScript', 'Vue.js', 'Bootstrap'],
         'Back-end': ['Node.js', 'PHP', 'MySQL'],
         'Outils & Autres': ['Git', 'NPM'], 
         'CMS': ['WordPress'],
