@@ -141,6 +141,9 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  body{
+    overflow-x: hidden;
+  }
   nav {
     justify-content: center;
     gap: 40px;

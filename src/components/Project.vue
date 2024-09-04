@@ -13,8 +13,8 @@ export default {
       isFlipped1: false,
       isFlipped2: false,
       isFlipped3: false,
-      currentImageIndex: 0, // Indice de l'image actuellement animée
-      totalImages: 0, // Nombre total d'images
+      currentImageIndex: 0, 
+      totalImages: 0, 
     };
   },
   methods: {
@@ -24,23 +24,19 @@ export default {
       else if (cardNumber === 3) this.isFlipped3 = !this.isFlipped3;
     },
     animateImages() {
-      const images = document.querySelectorAll('.project-card-front img'); // Sélectionne toutes les images
+      const images = document.querySelectorAll('.project-card-front img'); 
       this.totalImages = images.length; // Stocke le nombre total d'images
       setInterval(() => {
         images[this.currentImageIndex].classList.add('color-animation');
         this.currentImageIndex = (this.currentImageIndex + 1) % this.totalImages;
-      }, 4000); // Délai entre chaque animation (4 secondes pour correspondre à 3s d'animation + 1s de pause)
+      }, 4000); 
     }
   },
   mounted() {
-    this.animateImages(); // Lance l'animation à la fin du chargement de la page
+    this.animateImages(); 
   }
 };
 </script>
-
-
-
-
 <template>
   <div class="body project-container">
     <BackgroundDots />
@@ -52,7 +48,7 @@ export default {
       <div class="project-card" :class="{ flipped: isFlipped1 }">
         <div class="project-card-inner">
           <!-- Face avant -->
-          <div class="project-card-front">
+          <div class="project-card-front" :class="{ 'hide-front': isFlipped1 }">
             <h3 class="project-title">Kermony Office | Développeur Full-stack</h3>
             <img src="@/assets/images/kermony-screen.png" alt="">
             <button @click="flipCard(1)">
@@ -71,7 +67,6 @@ export default {
             </button>
           </div>
           <!-- Face arrière -->
-
           <div class="container project-card-back">
             <div class="terminal_toolbar">
               <div class="butt">
@@ -98,17 +93,12 @@ export default {
               </div>
             </div>
           </div>
-
-          
-
-
         </div>
       </div>
-
       <!-- Répète le même code pour les autres projets -->
       <div class="project-card" :class="{ flipped: isFlipped2 }">
         <div class="project-card-inner">
-          <div class="project-card-front">
+          <div class="project-card-front" :class="{ 'hide-front': isFlipped2 }">
             <h3 class="project-title">Nosa Coach | Développeur Front-end</h3>
             <img src="@/assets/images/nosa-screen.png" alt="">
             <button @click="flipCard(2)">
@@ -126,7 +116,6 @@ export default {
               </span>
             </button>
           </div>
-
           <div class="container project-card-back">
             <div class="terminal_toolbar">
               <div class="butt">
@@ -153,16 +142,12 @@ export default {
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
-
-
       <!-- Répète le même code pour les autres projets -->
       <div class="project-card" :class="{ flipped: isFlipped3 }">
         <div class="project-card-inner">
-          <div class="project-card-front">
+          <div class="project-card-front" :class="{ 'hide-front': isFlipped3 }">
             <h3 class="project-title">Musée du Jouet de Poissy | Chef de projet</h3>
             <img src="@/assets/images/mascotte-screen.png" alt="">
             <button @click="flipCard(3)">
@@ -180,7 +165,6 @@ export default {
               </span>
             </button>
           </div>
-
           <div class="container project-card-back">
             <div class="terminal_toolbar">
               <div class="butt">
@@ -207,7 +191,6 @@ export default {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -519,7 +502,11 @@ button:hover .svg-icon {
   border-radius: 8px;
 }
 
-
+/* Classe pour masquer le recto de la carte */
+.hide-front {
+  opacity: 0; /* Masque visuellement le recto */
+  visibility: hidden; /* Cache complètement le recto */
+}
 
 .project-card-front img {
   width: 100%;
