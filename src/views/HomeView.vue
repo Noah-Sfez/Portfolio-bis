@@ -4,6 +4,7 @@ import Timeline from '../components/Timeline.vue';
 import Form from '../components/Form.vue';
 import CarousselMobile from '../components/CarousselMobile.vue';
 import Technos from '../components/Techno.vue';
+import Projects from '../components/Project.vue';
 
 export default {
   components: {
@@ -11,7 +12,8 @@ export default {
     Timeline,
     Form, 
     CarousselMobile,
-    Technos
+    Technos,
+    Projects
   },
   methods: {
     handleScrollTo(sectionId) {
@@ -126,17 +128,22 @@ window.addEventListener("load", () => {
     <Technos />
     <!-------------------------------- Caroussel ---------------------------->
     <!--<h2 class="title-project">Mes projets.</h2>-->
-    <h2 class="title-project">Mes projets.</h2>
+  <!--  <h2 class="title-project">Mes projets.</h2>
       <p class="title-project-p">Voici une sélection des quelques projets que j'ai pu réaliser jusqu'à maintenant.</p>
       <p class="title-project-p"> Pour en voir davantage, rendez-vous sur mon <a href="https://github.com/Noah-Sfez" target="_blank" class="github-link" style="text-decoration: underline;">Github</a></p>
     <div id="caroussel">
       <Caroussel ref="projetsRef" />
-    </div>
+    </div>-->
 
     <!-------------------------------- CarousselMobile ---------------------------->
-    <div id="carousselMobile">
+    <!--<div id="carousselMobile">
       <CarousselMobile />
-    </div>
+    </div>-->
+
+
+    <Projects />
+
+    
     <!-------------------------------- Caroussel ---------------------------->
 
     <!-------------------------------- Form --------------------------
@@ -294,6 +301,8 @@ body {
     font-size: 5rem;
     background: linear-gradient(to bottom, #ffffff, #444444); /* Dégradé vertical */
     -webkit-background-clip: text; /* Appliquer le dégradé au texte */
+    -webkit-text-fill-: transparent; /* Rendre le texte transparent pour voir le dégradé */
+    background-clip: text; /* Appliquer le dégradé au texte */
     color: transparent; /* Rendre le texte transparent pour voir le dégradé */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Ombre portée floue */
     font-weight: bold;
